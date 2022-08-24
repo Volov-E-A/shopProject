@@ -1,0 +1,45 @@
+<div id="app"></div>
+
+
+<script>
+    // let userJson = '{"name":"petr","age": 25}';
+    // console.log(userJson);
+    // let user = JSON.parse(userJson);
+    // console.log(user);
+    // console.log(user.name);
+    // user.Status = "true";
+    // console.log(user);
+
+    // let user2 = JSON.stringify(user);
+    // console.log(user2);
+
+    // let masGoodsJson = '{"img": "./img/product/productPict-1.jpg","title": "ellery x m`o capsule", "text": "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.", "price": "$52.00"}'
+    // masGoods = JSON.parse(masGoodsJson);
+    // console.log(masGoods);
+    // masGoods.price = 30;
+    // console.log(masGoods.price);
+
+// fetch("JSON/masGoods.json")
+//     .then(text => text.JSON())
+//     .then(date => {
+//         console.log(date);
+//     })
+
+let goodsJson = '{    "good1": {        "img": "./img/product/productPict-1.jpg",        "title": "ellery x m`o capsule",        "text": "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",        "price": "$52.00"    },    "good2": {        "img": "./img/product/productPict-2.jpg",        "title": "ellery x m`o capsule",        "text": "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",        "price": "$52.00"    },    "good3": {        "img": "./img/product/productPict-3.jpg",        "title": "ellery x m`o capsule",        "text": "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",        "price": "$52.00"    },    "good4": {        "img": "./img/product/productPict-4.jpg",        "title": "ellery x m`o capsule",        "text": "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",        "price": "$52.00"    },    "good5": {        "img": "./img/product/productPict-5.jpg",        "title": "ellery x m`o capsule",        "text": "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",        "price": "$52.00"    },    "good6": {        "img": "./img/product/productPict-6.jpg",        "title": "ellery x m`o capsule",        "text": "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",        "price": "$52.00"    }}';
+
+let goods = JSON.parse(goodsJson)
+
+let product = document.getElementById("app");
+        console.log(goods);
+        product.insertAdjacentHTML('beforeend',`${goods.good1.title}`);
+        console.log(product);
+
+    // .then(date => {
+    //     let product = document.getElementById("app");
+    //     console.log(product);
+    //     product.innerHTML(date.good1);
+    //     console.log(product);
+    // })
+console.log(goods.good1);
+
+</script>
