@@ -108,6 +108,33 @@ body {
     .header__userpic {
       margin: 0 33px 0 0;
     }
+
+    .header__basketMini {
+      background-color: transparent;
+      border: none;
+      margin: 0 33px 0 0;
+
+      &:hover + .header__basket,
+      &:focus + .header__basket {
+        display: block;
+      }
+    }
+    .header__basket {
+      display: none;
+      min-width: 450px;
+      min-height: 250px;
+      background-color: white;
+      position: absolute;
+      top: 75px;
+      right: 0px;
+      border-radius: 0 0 0 30px;
+
+      h5 {
+        text-align: center;
+        padding: 103px;
+        font-size: xx-large;
+      }
+    }
   }
 }
 
@@ -247,7 +274,15 @@ body {
       }
 
       button {
-        display: none;
+        display: block;
+        font-size: 16px;
+        line-height: 19px;
+        color: #f26376;
+        text-decoration: none;
+        border: 1px solid #ff6a6a;
+        padding: 5px 38px;
+        margin: -44px 0px 9px 155px;
+        text-transform: uppercase;
       }
     }
   }
