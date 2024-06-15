@@ -115,13 +115,13 @@ body {
       border: none;
       margin: 0 33px 0 0;
 
-      &:hover + .header__basket,
-      &:focus + .header__basket {
-        display: block;
-      }
+      // &:hover + .header__basket,
+      // &:focus + .header__basket {
+      //   display: block;
+      // }
     }
     .header__basket {
-      display: none;
+      // display: none;
       min-width: 450px;
       min-height: 250px;
       background-color: white;
@@ -135,6 +135,9 @@ body {
         padding: 103px;
         font-size: xx-large;
       }
+    }
+    .inviset {
+      display: none;
     }
   }
 }

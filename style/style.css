@@ -12,6 +12,7 @@ body {
 .conteiner {
   max-width: 1140px;
   margin: 0 auto;
+  position: relative;
 }
 
 .visually-hidden {
@@ -91,11 +92,7 @@ body {
   border: none;
   margin: 0 33px 0 0;
 }
-.header .header__wrapper .header__basketMini:hover + .header__basket, .header .header__wrapper .header__basketMini:focus + .header__basket {
-  display: block;
-}
 .header .header__wrapper .header__basket {
-  display: none;
   min-width: 450px;
   min-height: 250px;
   background-color: white;
@@ -108,6 +105,9 @@ body {
   text-align: center;
   padding: 103px;
   font-size: xx-large;
+}
+.header .header__wrapper .inviset {
+  display: none;
 }
 
 .brand {

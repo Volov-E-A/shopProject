@@ -21,63 +21,66 @@ const renderProduct = (item =>                      //Отресовываем �
     
 */
 
+const API = "https://raw.githubusercontent.com/Volov-E-A/shopProject/7441bc29b81acabdffcdb1eeadd1965ce8d68886/JSON"
+
 export class ProductList {
     constructor(container='.produckts__list'){
         this.container = container
         this.goods =[]
-        this.fetchProducts()   //Метод наполняющий масив товарами
-        this.fetchJSON() // Преобразуем json
-        this.render() //Метод формитрования блока с товарами 
-    }
-
-    fetchProducts(){
-        // this.goods = [
-        //         {
-        //             srcImg: "./img/product/productPict-1.jpg",
-        //             itemTitle: "ellery x m'o capsule",
-        //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
-        //             itemPrice: "$52.00"
-        //         },
-        //         {
-        //             srcImg: "./img/product/productPict-2.jpg",
-        //             itemTitle: "ellery x m'o capsule",
-        //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
-        //             itemPrice: "$52.00"
-        //         },
-        //         {
-        //             srcImg: "./img/product/productPict-3.jpg",
-        //             itemTitle: "ellery x m'o capsule",
-        //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
-        //             itemPrice: "$52.00"
-        //         },
-        //         {
-        //             srcImg: "./img/product/productPict-4.jpg",
-        //             itemTitle: "ellery x m'o capsule",
-        //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
-        //             itemPrice: "$52.00"
-        //         },
-        //         {
-        //             srcImg: "./img/product/productPict-5.jpg",
-        //             itemTitle: "ellery x m'o capsule",
-        //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
-        //             itemPrice: "$52.00"
-        //         },
-        //         {
-        //             srcImg: "./img/product/productPict-6.jpg",
-        //             itemTitle: "ellery x m'o capsule",
-        //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
-        //             itemPrice: "$52.00"
-        //         }
-        //     ]
-        []
-    }
-
-    fetchJSON(){
-        return fetch("http://localhost/JSON/goods.json")
-            .then(goods => goods.json())
-            .then(data => {
-                this.goods = data;
+        // this.fetchProducts()   //Метод наполняющий масив товарами
+        this.fetchGoods() // Преобразуем json в обьект js
+            .then(goods => {
+                this.goods = goods
+                this.render() //Метод формитрования блока с товарами
             })
+
+         
+    }
+
+    // fetchProducts(){
+    //     // this.goods = [
+    //     //         {
+    //     //             srcImg: "./img/product/productPict-1.jpg",
+    //     //             itemTitle: "ellery x m'o capsule",
+    //     //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
+    //     //             itemPrice: "$52.00"
+    //     //         },
+    //     //         {
+    //     //             srcImg: "./img/product/productPict-2.jpg",
+    //     //             itemTitle: "ellery x m'o capsule",
+    //     //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
+    //     //             itemPrice: "$52.00"
+    //     //         },
+    //     //         {
+    //     //             srcImg: "./img/product/productPict-3.jpg",
+    //     //             itemTitle: "ellery x m'o capsule",
+    //     //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
+    //     //             itemPrice: "$52.00"
+    //     //         },
+    //     //         {
+    //     //             srcImg: "./img/product/productPict-4.jpg",
+    //     //             itemTitle: "ellery x m'o capsule",
+    //     //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
+    //     //             itemPrice: "$52.00"
+    //     //         },
+    //     //         {
+    //     //             srcImg: "./img/product/productPict-5.jpg",
+    //     //             itemTitle: "ellery x m'o capsule",
+    //     //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
+    //     //             itemPrice: "$52.00"
+    //     //         },
+    //     //         {
+    //     //             srcImg: "./img/product/productPict-6.jpg",
+    //     //             itemTitle: "ellery x m'o capsule",
+    //     //             itemText: "known for her sculptural takes on traditional tailoring, australian arbiter of cool kym ellery teams up with moda operandi.",
+    //     //             itemPrice: "$52.00"
+    //     //         }
+    //     //     ]
+    // }
+
+    fetchGoods(){
+        return fetch(`${API}/goods.json`)
+            .then(goods => goods.json())
     }
 
     render(){
@@ -90,7 +93,7 @@ export class ProductList {
     }
 }
 
-class ProductItem {
+export class ProductItem {
     constructor(product){
         this.title = product.itemTitle
         this.price = product.itemPrice

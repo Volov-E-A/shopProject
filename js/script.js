@@ -1,7 +1,9 @@
 // import {renderCart} from "./renderCard.js"
 import {ProductList} from "./renderCard.js"
+import {ProductBasket} from "./renderBasket.js"
 
-let list = new ProductList()  //let or const?
+const list = new ProductList()  //let or const?
+const basket = new ProductBasket()
 
 // const arrProduct = [
 //     {
