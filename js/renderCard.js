@@ -21,7 +21,7 @@ const renderProduct = (item =>                      //Отресовываем �
     
 */
 
-const API = "https://raw.githubusercontent.com/Volov-E-A/shopProject/7441bc29b81acabdffcdb1eeadd1965ce8d68886/JSON"
+const API = "https://raw.githubusercontent.com/Volov-E-A/shopProject/master/JSON"
 
 export class ProductList {
     constructor(container='.produckts__list'){
